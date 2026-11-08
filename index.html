@@ -21,7 +21,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const examData = {
+        const initialExamData = {
             part1: [
                 { id: 'p1q1', text: 'Saccharose là một disaccharide. Phát biểu nào sau đây về saccharose là đúng?', options: ['A. Saccharose không bị thuỷ phân trong môi trường acid.', 'B. Thuỷ phân saccharose chỉ thu được fructose.', 'C. Thuỷ phân saccharose chỉ thu được glucose.', 'D. Thuỷ phân saccharose thu được cả glucose và fructose.'], correct: 3, explanation: 'Saccharose khi bị thủy phân trong môi trường acid sẽ thu được hỗn hợp gồm α-glucose và β-fructose.' },
                 { id: 'p1q2', text: 'Nguyên liệu nào sau đây không phải là nguồn cung cấp tinh bột?', options: ['A. Gạo.', 'B. Hạt ngũ cốc.', 'C. Sợi bông.', 'D. Củ và quả.'], correct: 2, explanation: 'Sợi bông có thành phần chủ yếu là cellulose (khoảng 98%), không phải là tinh bột.' },
@@ -90,7 +90,19 @@
             ]
         };
 
+        // Hàm xáo trộn mảng (Fisher-Yates)
+        const shuffleArray = (array) => {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        };
+
         function App() {
+            // Sử dụng state để lưu dữ liệu đề, giúp có thể xáo trộn
+            const [examData, setExamData] = React.useState(initialExamData);
             const [answers, setAnswers] = React.useState({});
             const [submitted, setSubmitted] = React.useState(false);
             const [score, setScore] = React.useState(0);
@@ -109,6 +121,23 @@
                 const m = Math.floor(seconds / 60).toString().padStart(2, '0');
                 const s = (seconds % 60).toString().padStart(2, '0');
                 return `${m}:${s}`;
+            };
+
+            const handleShuffle = () => {
+                if(submitted) return;
+                
+                // Nếu đã chọn đáp án, hiện thông báo xác nhận
+                if(Object.keys(answers).length > 0) {
+                    const confirmShuffle = window.confirm("Đảo câu hỏi sẽ xáo trộn vị trí các câu, nhưng các đáp án bạn đã chọn vẫn được giữ nguyên. Bạn có muốn tiếp tục?");
+                    if(!confirmShuffle) return;
+                }
+
+                // Xáo trộn thứ tự câu hỏi ở cả 3 phần
+                setExamData({
+                    part1: shuffleArray(examData.part1),
+                    part2: shuffleArray(examData.part2),
+                    part3: shuffleArray(examData.part3)
+                });
             };
 
             const handleRadioChange = (qId, optionIndex) => {
@@ -157,15 +186,24 @@
 
             return (
                 <div className="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-6">
-                    {/* Bảng điều hướng đã sửa lỗi sticky trên mobile (thêm md:sticky) */}
+                    {/* Bảng điều hướng */}
                     <div className="md:w-1/4 bg-white p-4 rounded-lg shadow-md h-fit md:sticky md:top-4 border-t-4 border-blue-500 mb-6 md:mb-0">
                         <h2 className="text-2xl font-bold mb-4 text-center text-blue-700">⏱ {formatTime(timeLeft)}</h2>
-                        <button 
-                            onClick={handleSubmit} 
-                            disabled={submitted}
-                            className={`w-full py-3 px-4 rounded text-white font-bold mb-4 shadow transition-colors ${submitted ? 'bg-gray-400' : 'bg-red-500 hover:bg-red-600'}`}>
-                            {submitted ? 'ĐÃ NỘP BÀI' : 'NỘP BÀI'}
-                        </button>
+                        
+                        <div className="flex gap-2 mb-4">
+                            <button 
+                                onClick={handleShuffle} 
+                                disabled={submitted}
+                                className={`w-1/3 py-2 px-2 rounded text-white font-bold text-sm shadow transition-colors flex flex-col items-center justify-center ${submitted ? 'bg-gray-300' : 'bg-amber-500 hover:bg-amber-600'}`}>
+                                <span className="text-xl leading-none mb-1">🔀</span> Đảo đề
+                            </button>
+                            <button 
+                                onClick={handleSubmit} 
+                                disabled={submitted}
+                                className={`w-2/3 py-2 px-4 rounded text-white font-bold shadow transition-colors ${submitted ? 'bg-gray-400' : 'bg-red-500 hover:bg-red-600'}`}>
+                                {submitted ? 'ĐÃ NỘP BÀI' : 'NỘP BÀI'}
+                            </button>
+                        </div>
                         
                         {submitted && (
                             <div className="bg-green-100 p-4 rounded-lg mb-6 text-center border-2 border-green-400">
