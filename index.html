@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ứng dụng Luyện thi Hóa học</title>
+    <title>Ứng dụng Luyện thi Hóa học - Full Đề</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- React & ReactDOM -->
@@ -11,12 +11,8 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- MathJax for Chemistry Formulas -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
-        .math-text { font-family: "Times New Roman", Times, serif; }
     </style>
 </head>
 <body>
@@ -27,40 +23,68 @@
             part1: [
                 { id: 'p1q1', text: 'Saccharose là một disaccharide. Phát biểu nào sau đây về saccharose là đúng?', options: ['A. Saccharose không bị thuỷ phân trong môi trường acid.', 'B. Thuỷ phân saccharose chỉ thu được fructose.', 'C. Thuỷ phân saccharose chỉ thu được glucose.', 'D. Thuỷ phân saccharose thu được cả glucose và fructose.'], correct: 3, explanation: 'Saccharose khi bị thủy phân trong môi trường acid sẽ thu được hỗn hợp gồm α-glucose và β-fructose.' },
                 { id: 'p1q2', text: 'Nguyên liệu nào sau đây không phải là nguồn cung cấp tinh bột?', options: ['A. Gạo.', 'B. Hạt ngũ cốc.', 'C. Sợi bông.', 'D. Củ và quả.'], correct: 2, explanation: 'Sợi bông có thành phần chủ yếu là cellulose (khoảng 98%), không phải là tinh bột.' },
-                { id: 'p1q3', text: 'Ester X được tạo bởi ethyl alcohol và acetic acid. Công thức của X là', options: ['A. CH3COOCH3.', 'B. HCOOC2H5.', 'C. HCOOCH3.', 'D. CH3COOC2H5.'], correct: 3, explanation: 'Phản ứng ester hóa giữa C2H5OH và CH3COOH tạo ra ethyl acetate: CH3COOC2H5.' },
-                { id: 'p1q4', text: 'Docosahexaenoic acid (DHA) có nối đôi đầu tiên ở vị trí carbon số 3 tính từ đầu methyl. DHA là một acid béo thuộc nhóm:', options: ['A. omega-9.', 'B. omega-6.', 'C. omega-7.', 'D. omega-3.'], correct: 3, explanation: 'Nối đôi đầu tiên xuất hiện ở vị trí carbon số 3 từ đầu omega (nhóm CH3), nên thuộc nhóm omega-3.' },
-                { id: 'p1q5', text: 'Chất nào sau đây là thành phần chủ yếu của xà phòng?', options: ['A. CH3(CH2)3COONa.', 'B. CH3COONa.', 'C. C17H35COONa.', 'D. CH2=CHCOONa.'], correct: 2, explanation: 'Xà phòng là muối sodium hoặc potassium của acid béo (mạch carbon dài, C17H35COONa là sodium stearate).' },
-                { id: 'p1q6', text: 'Chất X thường sử dụng để sản xuất bia và chủ yếu được tạo ra trong quá trình thủy phân tinh bột. Chất X là', options: ['A. Fructose.', 'B. Saccharose.', 'C. Maltose.', 'D. Glucose.'], correct: 2, explanation: 'Tinh bột từ mầm lúa mạch được thủy phân thành maltose để lên men tạo bia.' },
-                { id: 'p1q7', text: 'Amine nào sau đây là amine bậc hai?', options: ['A. (CH3)3N.', 'B. CH3CH2CH2NH2.', 'C. CH3NHCH2CH3.', 'D. CH3CH(NH2)CH3.'], correct: 2, explanation: 'Amine bậc hai có nhóm -NH- liên kết với 2 gốc hydrocarbon. CH3NHCH2CH3 là amine bậc 2.' },
-                { id: 'p1q8', text: 'Amine nào sau đây ở trạng thái lỏng ở nhiệt độ phòng?', options: ['A. Dimethylamine.', 'B. Ethylamine.', 'C. Methylamine.', 'D. Aniline.'], correct: 3, explanation: 'Aniline là chất lỏng ở điều kiện thường. Các chất còn lại là chất khí.' },
-                { id: 'p1q9', text: 'Khi bị ốm, mất sức, nhiều người bệnh thường được truyền dịch đường để bổ sung nhanh năng lượng. Chất trong dịch truyền có tác dụng trên là', options: ['A. Maltose.', 'B. Glucose.', 'C. Saccharose.', 'D. Fructose.'], correct: 1, explanation: 'Dịch truyền phổ biến là dung dịch glucose 5%.' },
-                { id: 'p1q10', text: 'Cellulose thuộc loại polysaccharide, là thành phần chính tạo nên màng tế bào thực vật. Công thức của cellulose là', options: ['A. C2H4O2.', 'B. C12H22O11.', 'C. C6H12O6.', 'D. (C6H10O5)n.'], correct: 3, explanation: 'Công thức chung của cellulose là (C6H10O5)n.' }
-                // Rút gọn 10 câu Phần 1 để làm mẫu cấu trúc.
+                { id: 'p1q3', text: 'Ester X được tạo bởi ethyl alcohol và acetic acid. Công thức của X là', options: ['A. CH₃COOCH₃.', 'B. HCOOC₂H₅.', 'C. HCOOCH₃.', 'D. CH₃COOC₂H₅.'], correct: 3, explanation: 'Phản ứng ester hóa giữa C₂H₅OH và CH₃COOH tạo ra ethyl acetate: CH₃COOC₂H₅.' },
+                { id: 'p1q4', text: 'Docosahexaenoic acid (DHA) có công thức khung phân tử như hình. DHA là một acid béo thuộc nhóm', options: ['A. omega-9.', 'B. omega-6.', 'C. omega-7.', 'D. omega-3.'], correct: 3, explanation: 'Đánh số từ đầu methyl (đầu omega), nối đôi đầu tiên xuất hiện ở vị trí carbon số 3. Do đó DHA thuộc nhóm omega-3.' },
+                { id: 'p1q5', text: 'Chất nào sau đây là thành phần chủ yếu của xà phòng?', options: ['A. CH₃(CH₂)₃COONa.', 'B. CH₃COONa.', 'C. C₁₇H₃₅COONa.', 'D. CH₂=CHCOONa.'], correct: 2, explanation: 'Xà phòng là hỗn hợp muối sodium hoặc potassium của các acid béo (mạch carbon dài, C₁₇H₃₅COONa là sodium stearate).' },
+                { id: 'p1q6', text: 'Công thức nào dưới đây phù hợp với công thức cấu tạo của β-glucose?', options: ['A. [Hình ảnh A]', 'B. [Hình ảnh B]', 'C. [Hình ảnh C]', 'D. [Hình ảnh D]'], correct: 1, explanation: 'Trong cấu trúc dạng vòng của β-glucose, nhóm -OH ở vị trí C1 nằm cùng phía (hướng lên trên) so với mặt phẳng vòng tương đối với nhóm -CH₂OH.' },
+                { id: 'p1q7', text: 'Chất X thường sử dụng để sản xuất bia và chủ yếu được tạo ra trong quá trình thủy phân tinh bột. Chất X là', options: ['A. Fructose.', 'B. Saccharose.', 'C. Maltose.', 'D. Glucose.'], correct: 2, explanation: 'Trong sản xuất bia, tinh bột từ mầm lúa mạch được enzyme thủy phân thành đường maltose.' },
+                { id: 'p1q8', text: 'Amine nào sau đây là amine bậc hai?', options: ['A. (CH₃)₃N.', 'B. CH₃CH₂CH₂NH₂.', 'C. CH₃NHCH₂CH₃.', 'D. CH₃CH(NH₂)CH₃.'], correct: 2, explanation: 'Amine bậc hai có nhóm chức -NH- liên kết với 2 gốc hydrocarbon. CH₃NHCH₂CH₃ (ethylmethylamine) là amine bậc 2.' },
+                { id: 'p1q9', text: 'Điền vào chỗ trống: Lipid là những hợp chất ...(1)... có trong tế bào sống, không hoà tan trong nước, nhưng hoà tan trong các dung môi hữu cơ ...(2)...', options: ['A. (1) hữu cơ, (2) không phân cực.', 'B. (1) vô cơ, (2) không phân cực.', 'C. (1) hữu cơ, (2) phân cực.', 'D. (1) vô cơ, (2) phân cực.'], correct: 0, explanation: 'Lipid là hợp chất hữu cơ có trong tế bào sống, không hòa tan trong nước nhưng hòa tan trong dung môi hữu cơ không phân cực.' },
+                { id: 'p1q10', text: 'Amine nào sau đây ở trạng thái lỏng ở nhiệt độ phòng?', options: ['A. Dimethylamine.', 'B. Ethylamine.', 'C. Methylamine.', 'D. Aniline.'], correct: 3, explanation: 'Methylamine, dimethylamine, trimethylamine và ethylamine là chất khí. Aniline là chất lỏng.' },
+                { id: 'p1q11', text: 'Khi bị ốm, mất sức, nhiều người bệnh thường được truyền dịch đường để bổ sung nhanh năng lượng. Chất trong dịch truyền có tác dụng trên là', options: ['A. Maltose.', 'B. Glucose.', 'C. Saccharose.', 'D. Fructose.'], correct: 1, explanation: 'Dịch truyền phổ biến để bổ sung năng lượng là dung dịch glucose 5%.' },
+                { id: 'p1q12', text: 'Cellulose thuộc loại polysaccharide, là thành phần chính tạo nên màng tế bào thực vật, có nhiều trong gỗ, bông gòn. Công thức của cellulose là', options: ['A. C₂H₄O₂.', 'B. C₁₂H₂₂O₁₁.', 'C. C₆H₁₂O₆.', 'D. (C₆H₁₀O₅)n.'], correct: 3, explanation: 'Công thức phân tử chung của cellulose là (C₆H₁₀O₅)n.' },
+                { id: 'p1q13', text: 'Saccharose tham gia phản ứng nào sau đây?', options: ['A. Phản ứng với Cu(OH)₂, tạo dung dịch màu xanh lam.', 'B. Phản ứng thuỷ phân trong môi trường kiềm.', 'C. Phản ứng với thuốc thử Tollens.', 'D. Phản ứng với nước bromine.'], correct: 0, explanation: 'Saccharose có nhiều nhóm -OH kề nhau nên hòa tan Cu(OH)₂ ở nhiệt độ thường, tạo dung dịch phức màu xanh lam.' },
+                { id: 'p1q14', text: 'Phát biểu nào sau đây là đúng về carbohydrate X (Saccharose)?', options: ['A. X có nhiều trong trái cây chín.', 'B. X chỉ có cấu trúc mạch không phân nhánh.', 'C. X là thành phần chính của các loại hạt như ngô, gạo, đậu,...', 'D. X có vị ngọt hơn glucose.'], correct: 3, explanation: 'Hình ảnh mô tả cấu trúc của saccharose. Saccharose có vị ngọt sắc và ngọt hơn glucose.' },
+                { id: 'p1q15', text: 'Chất nào sau đây thuộc loại disaccharide?', options: ['A. Fructose.', 'B. Glucose.', 'C. Cellulose.', 'D. Saccharose.'], correct: 3, explanation: 'Saccharose là một disaccharide. (Glucose, Fructose là monosaccharide; Cellulose là polysaccharide).' },
+                { id: 'p1q16', text: 'Xà phòng và chất giặt rửa có đặc điểm chung nào sau đây?', options: ['A. Thường có cấu tạo gồm hai phần là phần không phân cực (kị nước) và phần phân cực (ưa nước).', 'B. Là muối sodium hoặc potassium của acid béo.', 'C. Là muối sulfonate hoặc sulfate của acid béo.', 'D. Không tan trong nước.'], correct: 0, explanation: 'Cấu tạo của xà phòng và chất giặt rửa đều gồm 1 đầu ưa nước (phân cực) và 1 đuôi dài kị nước (không phân cực).' },
+                { id: 'p1q17', text: 'Isopropyl formate là một ester có trong cà phê Arabica. Công thức của isopropyl formate là', options: ['A. CH₃COOCH₂CH₂CH₃.', 'B. HCOOCH₂CH₃.', 'C. HCOOCH₂CH₂CH₃.', 'D. HCOOCH(CH₃)₂.'], correct: 3, explanation: 'Isopropyl formate = HCOO- (formate) + -CH(CH₃)₂ (isopropyl) => HCOOCH(CH₃)₂.' },
+                { id: 'p1q18', text: 'Trong số 6 carbohydrate: glucose, fructose, saccharose, maltose, tinh bột và cellulose, số carbohydrate cho phản ứng thuỷ phân là', options: ['A. 2.', 'B. 5.', 'C. 3.', 'D. 4.'], correct: 3, explanation: 'Các chất bị thủy phân là disaccharide và polysaccharide gồm 4 chất: saccharose, maltose, tinh bột, cellulose.' }
             ],
             part2: [
                 {
-                    id: 'p2q1', text: 'Cho ester X có công thức: CH3COOCH3',
+                    id: 'p2q1', text: 'Cho ester X có công thức: CH₃COOCH₃',
                     statements: [
-                        { id: 'a', text: 'a) Tên gọi của X là methyl acetate.', correct: true, explanation: 'CH3COOCH3 có gốc acid là acetate, gốc alcohol là methyl.' },
+                        { id: 'a', text: 'a) Tên gọi của X là methyl acetate.', correct: true, explanation: 'CH₃COOCH₃ có gốc acid là acetate, gốc alcohol là methyl.' },
                         { id: 'b', text: 'b) Phần trăm khối lượng của nguyên tố carbon trong X là 48,86%', correct: false, explanation: 'M = 74. %C = (12*3/74)*100% ≈ 48,65%.' },
-                        { id: 'c', text: 'c) Thủy phân X trong môi trường acid thu được acid và alcohol có công thức phân tử giống nhau.', correct: false, explanation: 'Thu được CH3COOH (C2H4O2) và CH3OH (CH4O) khác nhau.' },
-                        { id: 'd', text: 'd) Để tăng hiệu suất phản ứng điều chế X ta dùng H2SO4 đặc và dùng dư acid hoặc alcohol.', correct: true, explanation: 'H2SO4 đặc hút nước và dùng dư chất tham gia giúp cân bằng chuyển dịch theo chiều thuận.' }
+                        { id: 'c', text: 'c) Thủy phân X trong môi trường acid thu được acid và alcohol có công thức phân tử giống nhau.', correct: false, explanation: 'Thu được acetic acid (C₂H₄O₂) và methyl alcohol (CH₄O) khác nhau.' },
+                        { id: 'd', text: 'd) Để tăng hiệu suất phản ứng điều chế X từ carboxylic acid và alcohol tương ứng người ta dùng H₂SO₄ đặc và dùng dư carboxylic acid hoặc alcohol.', correct: true, explanation: 'Dùng H₂SO₄ đặc (hút nước) và dư chất tham gia giúp cân bằng dịch chuyển theo chiều thuận.' }
                     ]
                 },
                 {
                     id: 'p2q2', text: 'Glucose có tính chất hóa học của alcohol đa chức và aldehyde.',
                     statements: [
-                        { id: 'a', text: 'a) Glucose có khả năng hòa tan Cu(OH)2 trong môi trường kiềm tạo thành dung dịch có màu xanh lam ở điều kiện thường.', correct: true, explanation: 'Do có nhiều nhóm OH kề nhau.' },
-                        { id: 'b', text: 'b) Glucose thuộc loại disaccharide nên có phản ứng thủy phân.', correct: false, explanation: 'Glucose là monosaccharide, không bị thủy phân.' },
-                        { id: 'c', text: 'c) Khi đun nóng, glucose có phản ứng với Cu(OH)2 trong môi trường kiềm tạo kết tủa vàng.', correct: false, explanation: 'Tạo kết tủa Cu2O màu đỏ gạch, không phải màu vàng.' },
-                        { id: 'd', text: 'd) Glucose làm mất màu nước bromine ở điều kiện thường do có nhiều nhóm OH.', correct: false, explanation: 'Làm mất màu do có nhóm chức aldehyde (-CHO).' }
+                        { id: 'a', text: 'a) Glucose có khả năng hòa tan Cu(OH)₂ trong môi trường kiềm tạo thành dung dịch có màu xanh lam ở điều kiện thường.', correct: true, explanation: 'Do glucose có nhiều nhóm -OH kề nhau.' },
+                        { id: 'b', text: 'b) Glucose thuộc loại disaccharide nên có phản ứng thủy phân thành các carbohydrate đơn giản hơn.', correct: false, explanation: 'Glucose là monosaccharide, không bị thủy phân.' },
+                        { id: 'c', text: 'c) Khi đun nóng, glucose có phản ứng với Cu(OH)₂ trong môi trường kiềm tạo kết tủa vàng.', correct: false, explanation: 'Tạo kết tủa Cu₂O có màu đỏ gạch.' },
+                        { id: 'd', text: 'd) Glucose làm mất màu nước bromine ở điều kiện thường do có nhiều nhóm OH.', correct: false, explanation: 'Làm mất màu nước bromine là do nhóm chức aldehyde (-CHO) có tính khử.' }
+                    ]
+                },
+                {
+                    id: 'p2q3', text: 'Tinh bột và cellulose đều thuộc loại polysaccharide.',
+                    statements: [
+                        { id: 'a', text: 'a) Vì cellulose và tinh bột đều có công thức chung là (C₆H₁₀O₅)n nên phân tử khối của cellulose và tinh bột đều bằng nhau.', correct: false, explanation: 'Hệ số polymer hóa n của cellulose lớn hơn rất nhiều so với tinh bột, nên khối lượng phân tử không bằng nhau.' },
+                        { id: 'b', text: 'b) Tinh bột gồm nhiều đơn vị β-glucose còn cellulose gồm nhiều đơn vị α-glucose.', correct: false, explanation: 'Ngược lại: Tinh bột cấu tạo từ α-glucose, cellulose cấu tạo từ β-glucose.' },
+                        { id: 'c', text: 'c) Cellulose và amylopectin đều cấu tạo từ các đơn vị glucose liên kết với nhau bằng các liên kết glycoside nên chúng đều có cấu tạo mạch polymer phân nhánh.', correct: false, explanation: 'Cellulose có mạch thẳng không phân nhánh.' },
+                        { id: 'd', text: 'd) Dung dịch hồ tinh bột tạo với iodine hợp chất màu xanh tím. Cellulose không có tính chất này.', correct: true, explanation: 'Đây là phản ứng đặc trưng để nhận biết tinh bột.' }
+                    ]
+                },
+                {
+                    id: 'p2q4', text: 'Naftifine là một chất có tác dụng chống nấm.',
+                    statements: [
+                        { id: 'a', text: 'a) Naftifine là amine bậc ba.', correct: true, explanation: 'Nguyên tử N liên kết trực tiếp với 3 gốc carbon.' },
+                        { id: 'b', text: 'b) Naftifine thuộc loại arylamine.', correct: false, explanation: 'Nguyên tử N đính vào các nhánh alkyl (-CH₂-, -CH₃), không đính trực tiếp vào vòng thơm nên là alkylamine.' },
+                        { id: 'c', text: 'c) Tổng số nguyên tử carbon trong naftifine là 20.', correct: false, explanation: 'Tổng số C = 10 (naphthalene) + 1 (CH₂) + 1 (CH₃) + 9 (nhánh allyl-phenyl) = 21.' },
+                        { id: 'd', text: 'd) Naftifine có thể tác dụng với hydrochloric acid tạo thành muối.', correct: true, explanation: 'Vì là amine nên có tính base, tác dụng được với HCl tạo muối.' }
                     ]
                 }
             ],
             part3: [
-                { id: 'p3q1', text: 'Cho các chất: (1) methyl acetate; (2) propyl acetate; (3) sodium formate; (4) sodium palmitate; (5) methyl methacrylate; (6) methyl formate. Liệt kê theo trình tự từ nhỏ đến lớn các số ứng với tất cả các chất là ester (viết liền).', correct: '1256', explanation: 'Các ester là 1, 2, 5, 6. Chất 3 và 4 là muối.' },
-                { id: 'p3q2', text: 'Số đồng phân amine có công thức phân tử C4H11N là bao nhiêu?', correct: '8', explanation: 'Có 4 đồng phân bậc 1, 3 đồng phân bậc 2, và 1 đồng phân bậc 3. Tổng là 8.' },
-                { id: 'p3q3', text: 'Để thu được 27 kg glucose cần thủy phân m kg saccharose với hiệu suất 60%. Giá trị của m là bao nhiêu?', correct: '85.5', explanation: 'm (lý thuyết) = 27*342/180 = 51,3 kg. m (thực tế) = 51,3 / 0,6 = 85,5 kg.' }
+                { id: 'p3q1', text: 'Cho các chất: (1) methyl acetate; (2) propyl acetate; (3) sodium formate; (4) sodium palmitate; (5) methyl methacrylate; (6) methyl formate. Liệt kê theo trình tự từ nhỏ đến lớn các số ứng với tất cả các chất là ester (ví dụ: 56, 124...).', correct: '1256', explanation: 'Các ester là 1, 2, 5, 6. Chất 3 và 4 là muối.' },
+                { id: 'p3q2', text: 'Số đồng phân amine có công thức phân tử C₄H₁₁N là bao nhiêu?', correct: '8', explanation: 'Có 4 đồng phân bậc 1, 3 đồng phân bậc 2, và 1 đồng phân bậc 3. Tổng cộng là 8.' },
+                { id: 'p3q3', text: 'Trong công nghiệp, saccharose thủy phân thành glucose và fructose để tráng gương. Để thu được 27 kg glucose cần thủy phân m kg saccharose với hiệu suất phản ứng 60%. Giá trị của m là bao nhiêu?', correct: '85.5', explanation: 'm (lý thuyết) = 27 × 342 / 180 = 51,3 kg. m (thực tế) = 51,3 / 0,6 = 85,5 kg.' },
+                { id: 'p3q4', text: 'Cho: glucose, fructose, maltose, saccharose, tinh bột. Có bao nhiêu chất vừa tạo hợp chất màu xanh lam với Cu(OH)₂/NaOH, vừa tạo kết tủa Ag, và làm mất màu nước bromine?', correct: '2', explanation: 'Gồm Glucose và Maltose (Fructose không làm mất màu Br₂; Saccharose không tráng Ag; Tinh bột không hòa tan Cu(OH)₂).' },
+                { id: 'p3q5', text: 'Cho các chất sau: Cu(OH)₂, NaOH, HCl, FeCl₃, HNO₂. Trong điều kiện thích hợp, có bao nhiêu chất phản ứng với dung dịch CH₃NH₂?', correct: '4', explanation: 'Phản ứng với: Cu(OH)₂ (tạo phức), HCl (tạo muối), FeCl₃ (tạo kết tủa Fe(OH)₃), HNO₂ (tạo ancol và N₂). Không phản ứng với NaOH.' },
+                { id: 'p3q6', text: 'Tráng 540 gương soi (S = 0,8m²/gương) với bề dày lớp bạc 0,2 µm. Cần m gam glucose tác dụng AgNO₃/NH₃. (H = 75%, D_Ag = 10,49 g/cm³). Giá trị của m (làm tròn đến hàng đơn vị)?', correct: '1007', explanation: 'V(Ag) = 540 × 0,8 × 10000 × (0,2 × 10^-4) = 86,4 cm³. m(Ag) = 86,4 × 10,49 ≈ 906,3g. n(Ag) = 8,39 mol. n(glucozo) = 8,39/2 = 4,195 mol. m(cần dùng) = (4,195 × 180) / 0,75 ≈ 1007g.' }
             ]
         };
 
@@ -68,7 +92,7 @@
             const [answers, setAnswers] = React.useState({});
             const [submitted, setSubmitted] = React.useState(false);
             const [score, setScore] = React.useState(0);
-            const [timeLeft, setTimeLeft] = React.useState(50 * 60); // 50 minutes
+            const [timeLeft, setTimeLeft] = React.useState(50 * 60); // 50 phút
 
             React.useEffect(() => {
                 if (timeLeft > 0 && !submitted) {
@@ -103,12 +127,12 @@
             const handleSubmit = () => {
                 let totalScore = 0;
                 
-                // Chấm điểm Phần 1 (0.25đ / câu) - Trọng số mẫu do rút gọn đề
+                // Phần 1: 0.25đ / câu (Tổng 4.5đ)
                 examData.part1.forEach(q => {
                     if (answers[q.id] === q.correct) totalScore += 0.25;
                 });
 
-                // Chấm điểm Phần 2
+                // Phần 2: (Tổng 4.0đ)
                 examData.part2.forEach(q => {
                     let correctCount = 0;
                     q.statements.forEach(st => {
@@ -120,60 +144,109 @@
                     else if (correctCount === 4) totalScore += 1.0;
                 });
 
-                // Chấm điểm Phần 3 (0.25đ / câu)
+                // Phần 3: 0.25đ / câu (Tổng 1.5đ)
                 examData.part3.forEach(q => {
-                    if (answers[q.id] && answers[q.id].replace(',', '.') === q.correct.toString()) {
+                    if (answers[q.id] && answers[q.id].replace(',', '.') === q.correct) {
                         totalScore += 0.25;
                     }
                 });
 
                 setScore(totalScore);
                 setSubmitted(true);
-                setTimeout(() => { if(window.MathJax) MathJax.typeset(); }, 100);
             };
 
             return (
-                <div className="max-w-5xl mx-auto p-4 flex flex-col md:flex-row gap-6">
-                    {/* Bảng điều khiển */}
-                    <div className="md:w-1/4 bg-white p-4 rounded-lg shadow-md h-fit sticky top-4">
-                        <h2 className="text-xl font-bold mb-4 text-blue-700">Đồng hồ: {formatTime(timeLeft)}</h2>
+                <div className="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-6">
+                    {/* Panel Bảng điều hướng */}
+                    <div className="md:w-1/4 bg-white p-4 rounded-lg shadow-md h-fit sticky top-4 border-t-4 border-blue-500">
+                        <h2 className="text-2xl font-bold mb-4 text-center text-blue-700">⏱ {formatTime(timeLeft)}</h2>
                         <button 
                             onClick={handleSubmit} 
                             disabled={submitted}
-                            className={`w-full py-2 px-4 rounded text-white font-bold mb-4 ${submitted ? 'bg-gray-400' : 'bg-red-500 hover:bg-red-600'}`}>
+                            className={`w-full py-3 px-4 rounded text-white font-bold mb-4 shadow transition-colors ${submitted ? 'bg-gray-400' : 'bg-red-500 hover:bg-red-600'}`}>
                             {submitted ? 'ĐÃ NỘP BÀI' : 'NỘP BÀI'}
                         </button>
                         
                         {submitted && (
-                            <div className="bg-green-100 p-4 rounded-lg mb-4 text-center">
-                                <h3 className="text-lg font-bold">Điểm số ước tính</h3>
-                                <p className="text-3xl text-green-700 font-black">{score.toFixed(2)}</p>
+                            <div className="bg-green-100 p-4 rounded-lg mb-6 text-center border-2 border-green-400">
+                                <h3 className="text-lg font-bold text-green-800">Điểm số</h3>
+                                <p className="text-4xl text-green-700 font-black">{score.toFixed(2)} <span className="text-lg">/ 10</span></p>
                             </div>
                         )}
 
-                        <h3 className="font-bold mb-2">Trạng thái:</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {examData.part1.map((q, idx) => (
-                                <a key={q.id} href={`#${q.id}`} 
-                                   className={`w-8 h-8 flex items-center justify-center rounded border text-sm font-bold
-                                   ${submitted 
-                                        ? (answers[q.id] === q.correct ? 'bg-green-500 text-white' : 'bg-red-500 text-white') 
-                                        : (answers[q.id] !== undefined ? 'bg-blue-500 text-white' : 'bg-white text-gray-700')}`}>
-                                    {idx + 1}
-                                </a>
-                            ))}
+                        {/* Navigation Buttons */}
+                        <div className="space-y-4">
+                            <div>
+                                <h3 className="font-bold text-sm text-gray-500 mb-2 uppercase">Phần 1</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {examData.part1.map((q, idx) => (
+                                        <a key={q.id} href={`#${q.id}`} 
+                                           className={`w-8 h-8 flex items-center justify-center rounded border text-sm font-bold shadow-sm transition-all
+                                           ${submitted 
+                                                ? (answers[q.id] === q.correct ? 'bg-green-500 text-white border-green-600' : 'bg-red-500 text-white border-red-600') 
+                                                : (answers[q.id] !== undefined ? 'bg-blue-500 text-white border-blue-600' : 'bg-gray-100 hover:bg-gray-200 text-gray-700')}`}>
+                                            {idx + 1}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 className="font-bold text-sm text-gray-500 mb-2 uppercase">Phần 2 (Đúng/Sai)</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {examData.part2.map((q, idx) => {
+                                        // Kiểm tra xem đã tick đủ 4 ý chưa
+                                        const isFullyAnswered = ['a','b','c','d'].every(id => answers[`${q.id}_${id}`] !== undefined);
+                                        let isAllCorrect = false;
+                                        if (submitted) {
+                                            isAllCorrect = q.statements.every(st => answers[`${q.id}_${st.id}`] === st.correct);
+                                        }
+                                        return (
+                                            <a key={q.id} href={`#${q.id}`} 
+                                               className={`w-8 h-8 flex items-center justify-center rounded border text-sm font-bold shadow-sm transition-all
+                                               ${submitted 
+                                                    ? (isAllCorrect ? 'bg-green-500 text-white' : 'bg-orange-400 text-white') 
+                                                    : (isFullyAnswered ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700')}`}>
+                                                {idx + 1}
+                                            </a>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 className="font-bold text-sm text-gray-500 mb-2 uppercase">Phần 3 (Trả lời ngắn)</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {examData.part3.map((q, idx) => {
+                                        const isAnswered = answers[q.id] && answers[q.id].trim() !== '';
+                                        const isCorrect = submitted && answers[q.id]?.replace(',', '.') === q.correct;
+                                        return (
+                                            <a key={q.id} href={`#${q.id}`} 
+                                               className={`w-8 h-8 flex items-center justify-center rounded border text-sm font-bold shadow-sm transition-all
+                                               ${submitted 
+                                                    ? (isCorrect ? 'bg-green-500 text-white' : 'bg-red-500 text-white') 
+                                                    : (isAnswered ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700')}`}>
+                                                {idx + 1}
+                                            </a>
+                                        )
+                                    })}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     {/* Nội dung đề thi */}
                     <div className="md:w-3/4 bg-white p-6 rounded-lg shadow-md">
-                        <h1 className="text-2xl font-bold text-center mb-6 uppercase">Đề Kiểm Tra Hóa Học</h1>
+                        <h1 className="text-3xl font-bold text-center mb-2 uppercase text-gray-800">Đề Kiểm Tra Hóa Học</h1>
+                        <p className="text-center text-gray-500 mb-8 italic">Biết: C = 12; H = 1; O = 16; N = 14; Ag = 108; Br = 80</p>
                         
                         {/* PHẦN 1 */}
-                        <h2 className="text-xl font-bold mb-4 border-b-2 border-blue-500 pb-2">PHẦN 1: TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN</h2>
+                        <div className="bg-blue-50 px-4 py-2 border-l-4 border-blue-600 mb-6 font-bold text-blue-800 uppercase shadow-sm">
+                            Phần 1: Trắc nghiệm nhiều phương án lựa chọn (18 Câu, 4,5 Điểm)
+                        </div>
                         {examData.part1.map((q, idx) => (
-                            <div key={q.id} id={q.id} className="mb-6 p-4 rounded bg-gray-50">
-                                <p className="font-bold mb-2">Câu {idx + 1}: <span className="font-normal">{q.text}</span></p>
+                            <div key={q.id} id={q.id} className="mb-6 pb-6 border-b border-gray-200 last:border-0 hover:bg-gray-50 p-2 rounded transition-colors duration-200">
+                                <p className="font-bold mb-3 text-gray-800">Câu {idx + 1}: <span className="font-normal">{q.text}</span></p>
                                 <div className="space-y-2 pl-4">
                                     {q.options.map((opt, oIdx) => (
                                         <label key={oIdx} className="flex items-start cursor-pointer group">
@@ -181,43 +254,47 @@
                                                    checked={answers[q.id] === oIdx}
                                                    onChange={() => handleRadioChange(q.id, oIdx)}
                                                    disabled={submitted}
-                                                   className="mt-1 mr-2 cursor-pointer" />
-                                            <span className={`${submitted && q.correct === oIdx ? 'text-green-600 font-bold' : ''}`}>{opt}</span>
+                                                   className="mt-1 mr-3 cursor-pointer w-4 h-4 text-blue-600" />
+                                            <span className={`flex-1 ${submitted && q.correct === oIdx ? 'text-green-700 font-bold' : (submitted && answers[q.id] === oIdx && q.correct !== oIdx ? 'text-red-600 line-through' : 'text-gray-700')}`}>{opt}</span>
                                         </label>
                                     ))}
                                 </div>
                                 {submitted && (
-                                    <div className="mt-3 p-3 bg-blue-100 border-l-4 border-blue-500 rounded text-sm">
-                                        <span className="font-bold text-blue-700">Giải thích: </span>{q.explanation}
+                                    <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded text-sm text-gray-700">
+                                        <span className="font-bold text-blue-700 mr-2">Giải thích:</span> {q.explanation}
                                     </div>
                                 )}
                             </div>
                         ))}
 
                         {/* PHẦN 2 */}
-                        <h2 className="text-xl font-bold mb-4 mt-8 border-b-2 border-blue-500 pb-2">PHẦN 2: TRẮC NGHIỆM ĐÚNG SAI</h2>
+                        <div className="bg-blue-50 px-4 py-2 border-l-4 border-blue-600 mb-6 mt-10 font-bold text-blue-800 uppercase shadow-sm">
+                            Phần 2: Trắc nghiệm Đúng/Sai (4 Câu, 4,0 Điểm)
+                        </div>
+                        <p className="text-sm italic text-gray-500 mb-4">Lưu ý: Đúng 1 ý: 0,1đ; Đúng 2 ý: 0,25đ; Đúng 3 ý: 0,5đ; Đúng 4 ý: 1,0đ</p>
                         {examData.part2.map((q, idx) => (
-                            <div key={q.id} id={q.id} className="mb-6 p-4 rounded bg-gray-50">
-                                <p className="font-bold mb-3">Câu {idx + 1}: <span className="font-normal">{q.text}</span></p>
-                                <div className="space-y-4 pl-2">
+                            <div key={q.id} id={q.id} className="mb-8 pb-6 border-b border-gray-200">
+                                <p className="font-bold mb-4 text-gray-800 text-lg">Câu {idx + 1}: <span className="font-normal text-base">{q.text}</span></p>
+                                <div className="space-y-3 pl-2">
                                     {q.statements.map((st) => {
                                         const stateKey = `${q.id}_${st.id}`;
+                                        const isAnswered = answers[stateKey] !== undefined;
                                         const isCorrect = answers[stateKey] === st.correct;
                                         return (
-                                            <div key={st.id} className="border-b pb-2">
-                                                <p className="mb-2">{st.text}</p>
-                                                <div className="flex gap-4">
+                                            <div key={st.id} className="bg-gray-50 p-3 rounded border border-gray-100">
+                                                <p className="mb-2 text-gray-800">{st.text}</p>
+                                                <div className="flex gap-6 mb-2">
                                                     <label className="flex items-center cursor-pointer">
-                                                        <input type="radio" name={stateKey} checked={answers[stateKey] === true} onChange={() => handleTFChange(q.id, st.id, true)} disabled={submitted} className="mr-1"/> Đúng
+                                                        <input type="radio" name={stateKey} checked={answers[stateKey] === true} onChange={() => handleTFChange(q.id, st.id, true)} disabled={submitted} className="mr-2 w-4 h-4"/> <span className={submitted && answers[stateKey]===true && !isCorrect ? 'text-red-500 line-through' : ''}>Đúng</span>
                                                     </label>
                                                     <label className="flex items-center cursor-pointer">
-                                                        <input type="radio" name={stateKey} checked={answers[stateKey] === false} onChange={() => handleTFChange(q.id, st.id, false)} disabled={submitted} className="mr-1"/> Sai
+                                                        <input type="radio" name={stateKey} checked={answers[stateKey] === false} onChange={() => handleTFChange(q.id, st.id, false)} disabled={submitted} className="mr-2 w-4 h-4"/> <span className={submitted && answers[stateKey]===false && !isCorrect ? 'text-red-500 line-through' : ''}>Sai</span>
                                                     </label>
                                                 </div>
                                                 {submitted && (
-                                                    <div className={`mt-2 text-sm p-2 rounded ${isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
-                                                        <span className="font-bold">Đáp án đúng là: {st.correct ? 'ĐÚNG' : 'SAI'}. </span>
-                                                        {st.explanation}
+                                                    <div className={`mt-2 text-sm p-2 rounded ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                                                        <span className="font-bold">Đáp án: {st.correct ? 'ĐÚNG' : 'SAI'}. </span>
+                                                        <span>{st.explanation}</span>
                                                     </div>
                                                 )}
                                             </div>
@@ -228,20 +305,22 @@
                         ))}
 
                         {/* PHẦN 3 */}
-                        <h2 className="text-xl font-bold mb-4 mt-8 border-b-2 border-blue-500 pb-2">PHẦN 3: TRẢ LỜI NGẮN</h2>
+                        <div className="bg-blue-50 px-4 py-2 border-l-4 border-blue-600 mb-6 mt-10 font-bold text-blue-800 uppercase shadow-sm">
+                            Phần 3: Trả lời ngắn (6 Câu, 1,5 Điểm)
+                        </div>
                         {examData.part3.map((q, idx) => (
-                            <div key={q.id} id={q.id} className="mb-6 p-4 rounded bg-gray-50">
-                                <p className="font-bold mb-2">Câu {idx + 1}: <span className="font-normal">{q.text}</span></p>
+                            <div key={q.id} id={q.id} className="mb-6 p-4 rounded bg-gray-50 border border-gray-100">
+                                <p className="font-bold mb-3 text-gray-800">Câu {idx + 1}: <span className="font-normal leading-relaxed">{q.text}</span></p>
                                 <input type="text" 
-                                       placeholder="Nhập đáp án..."
+                                       placeholder="Nhập đáp án của bạn..."
                                        value={answers[q.id] || ''}
                                        onChange={(e) => handleTextChange(q.id, e.target.value)}
                                        disabled={submitted}
-                                       className="border border-gray-300 p-2 rounded w-full md:w-1/2 focus:outline-none focus:border-blue-500"/>
+                                       className="border border-gray-300 p-3 rounded w-full md:w-2/3 focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold text-blue-700 shadow-sm"/>
                                 {submitted && (
-                                    <div className={`mt-3 p-3 rounded text-sm ${answers[q.id] == q.correct ? 'bg-green-100' : 'bg-red-100'}`}>
-                                        <p><span className="font-bold">Đáp án của đề: </span> <span className="font-black">{q.correct}</span></p>
-                                        <p className="mt-1 text-gray-700">{q.explanation}</p>
+                                    <div className={`mt-3 p-3 rounded text-sm ${answers[q.id]?.replace(',', '.') === q.correct ? 'bg-green-100 border border-green-200' : 'bg-red-100 border border-red-200'}`}>
+                                        <p><span className="font-bold">Đáp án chính xác: </span> <span className="font-black text-lg ml-2">{q.correct.replace('.', ',')}</span></p>
+                                        <p className="mt-2 text-gray-700 italic border-t pt-2 border-gray-300">{q.explanation}</p>
                                     </div>
                                 )}
                             </div>
@@ -257,6 +336,3 @@
     </script>
 </body>
 </html>
-```eof
-
-Tất cả code, giao diện và nội dung đều được gói gọn trong file HTML trên. Bạn chỉ cần tải file về và nhấn đúp chuột (mở bằng Chrome/Cốc Cốc/Edge) là có thể sử dụng được ngay mà không cần cài đặt thêm phần mềm nào khác! Chúc bạn ôn tập tốt.
